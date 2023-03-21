@@ -1,6 +1,13 @@
 import 'enums.dart';
+import 'package:flutter_application_2/models/data.dart' as lib;
 
 class Character {
+  int id;
+  String name;
+  Gender gender;
+  String wiki;
+  List<String> affiliations;
+
   Character({
     required this.id,
     required this.name,
@@ -8,18 +15,66 @@ class Character {
     required this.wiki,
     required this.affiliations,
   });
-
-  int id;
-  String name;
-  Gender gender;
-  String wiki;
-  List<String> affiliations;
-
-  factory Character.fromJson(Map<String, dynamic> json) => Character(
-        id: json['id'],
-        name: json['name'],
-        gender: genderValues.map[json['gender']]!,
-        wiki: json['wiki'],
-        affiliations: List<String>.from(json['affiliations'].map((x) => x)),
-      );
 }
+
+Character character1 = Character(
+    id: 1,
+    name: 'Luke',
+    gender: Gender.male,
+    wiki: 'http://starwars.wikia.com/wiki/Luke_Skywalker',
+    affiliations: [
+      "Alliance to Restore the Republic",
+      "Red Squadron",
+      "Rogue Squadron",
+      "Massassi Group",
+      "Leia Organa's team",
+      "Endor strike team",
+      "Jedi Order",
+      "Bright Tree tribe",
+      "New Republic",
+      "Resistance"
+    ]);
+
+Character character2 = Character(
+    id: 1,
+    name: 'Luke',
+    gender: Gender.male,
+    wiki: 'http://starwars.wikia.com/wiki/Luke_Skywalker',
+    affiliations: [
+      "Alliance to Restore the Republic",
+      "Red Squadron",
+      "Rogue Squadron",
+      "Massassi Group",
+      "Leia Organa's team",
+      "Endor strike team",
+      "Jedi Order",
+      "Bright Tree tribe",
+      "New Republic",
+      "Resistance"
+    ]);
+
+Character character3 = Character(
+    id: 1,
+    name: 'Luke',
+    gender: Gender.male,
+    wiki: 'http://starwars.wikia.com/wiki/Luke_Skywalker',
+    affiliations: [
+      "Alliance to Restore the Republic",
+      "Red Squadron",
+      "Rogue Squadron",
+      "Massassi Group",
+      "Leia Organa's team",
+      "Endor strike team",
+      "Jedi Order",
+      "Bright Tree tribe",
+      "New Republic",
+      "Resistance"
+    ]);
+
+class CharachterList {
+  final List<Character> starwaspeople;
+  const CharachterList({required this.starwaspeople});
+}
+
+CharachterList starwarspeople =
+    CharachterList(starwaspeople: [character1, character2, character3]);

@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/detailpage.dart';
 import 'package:flutter_application_2/listview.dart';
 import 'package:flutter_application_2/models/data.dart' as lib;
+import 'package:flutter_application_2/models/character.dart' as chr;
 
 void main() {
   runApp(MainApp());
@@ -59,9 +61,24 @@ class _MainState extends State<Main> {
               textAlign: TextAlign.center,
             ),
           ),
-          Images(),
-          Images(),
-          Images()
+          GestureDetector(onTap: (){
+             Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DetailPage()));
+          },child: Images()),
+           GestureDetector(onTap: (){
+             Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DetailPage()));
+          },child: Images()),
+          GestureDetector(onTap: (){
+             Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DetailPage()));
+          },child: Images()),
         ],
       ),
     );
